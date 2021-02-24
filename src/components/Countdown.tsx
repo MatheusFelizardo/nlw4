@@ -24,6 +24,13 @@ export const Countdown = () => {
                 setTime(time-1)
             }, 1000)
         }
+        if(time == 0) {
+            let alarm = new Audio ('alarm-sound.mp3')
+
+            alarm.play()
+            setActive(false)
+            setTime(25 * 60)
+        }
     }, [active, time])
 
     return (
