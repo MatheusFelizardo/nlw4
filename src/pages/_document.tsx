@@ -7,6 +7,7 @@ export default class MyDocument extends Document {
         return (
             <Html lang="pt-BR">  
                 <Head>
+                    <script src="https://kit.fontawesome.com/407ada2811.js"></script>
                     <link rel="shortcut icon" href="favicon.png" type="image/png"/>
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
                     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />

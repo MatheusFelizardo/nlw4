@@ -1,37 +1,49 @@
-import { useEffect, useState } from 'react'
-import styles from '../styles/components/Countdown.module.css'
+import { useEffect, useState, useContext } from 'react'
+import { ChallengesContext } from '../contexts/ChallengesContext'
+import styles from '../styles/components/Countdown.module.scss'
+
+import { faPlay, faStop, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 export const Countdown = () => {
-
-    const [time, setTime] = useState(25 * 60)
-    const [active, setActive] = useState(false)
-
+    const {startNewChallenge} = useContext(ChallengesContext)
+    const [time, setTime] = useState(.1 * 60)
+    const [isActive, setIsActive] = useState(false)
     const minutes = Math.floor(time / 60)
     const seconds = time % 60
+    const [hasFinished, setHasFinished] = useState(false)
 
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
     const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('')
 
     const startCountdown = () => {
-        setActive(true)
+        setIsActive(true)
+    }
 
-
+    const stopCountdown = () => {
+        setIsActive(false)
     }
 
     useEffect(()=> {
-        if(active && time > 0) {
+        if(isActive && time > 0) {
             setTimeout(()=> {
                 setTime(time-1)
             }, 1000)
         }
-        if(time == 0) {
+        if(isActive && time === 0) {
+            setHasFinished(true)
             let alarm = new Audio ('alarm-sound.mp3')
 
             alarm.play()
-            setActive(false)
-            setTime(25 * 60)
+            startNewChallenge()
+            setIsActive(false)
+            setTime(.1 * 60)
         }
-    }, [active, time])
+        if (!isActive) {
+            setTime(.1 * 60)
+        }
+    }, [isActive, time])
 
     return (
         <div>
@@ -47,10 +59,21 @@ export const Countdown = () => {
             </div>
 
         </div>
+        {hasFinished ? ( 
+            <button disabled onClick={startCountdown} type="button" className={`${styles.countdownButton} ${styles.countdownButtonFinished}`}>
+            <span>Ciclo encerrado</span> <FontAwesomeIcon icon={faCheckCircle} />
+            </button>
+        ) : <>
+             {isActive ? ( <button onClick={stopCountdown} type="button" className={`${styles.countdownButton} ${styles.countdownButtonActive}`}>
+            <span>Abandonar ciclo</span> <FontAwesomeIcon icon={faStop} />
+            </button>) : (<button onClick={startCountdown} type="button" className={styles.countdownButton}>
+            <span>Iniciar um ciclo</span> <FontAwesomeIcon icon={faPlay} />
+            </button>)}
+        </>}
+       
+        
 
-        <button onClick={startCountdown} type="button" className={styles.countdownButton}>
-            Iniciar um ciclo
-        </button>
+
 
         </div>
     )
