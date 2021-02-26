@@ -6,6 +6,7 @@ import styles from '../styles/pages/Home.module.scss'
 
 import Head from 'next/head'
 import { ChallengeBox } from '../components/ChallengeBox'
+import { CountdownProvider } from '../contexts/CountdownContext'
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <title>Início | MoveIT</title>
       </Head>
       <ExperienceBar />
-
+      <CountdownProvider>
       <section>
         <div>
           <Profile />
@@ -28,6 +29,7 @@ export default function Home() {
 
         </div>
       </section>
+      </CountdownProvider>
 
     </div>
   )
