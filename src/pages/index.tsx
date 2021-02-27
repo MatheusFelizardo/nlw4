@@ -8,40 +8,69 @@ import Head from 'next/head'
 import { ChallengeBox } from '../components/ChallengeBox'
 import { CountdownProvider } from '../contexts/CountdownContext'
 import { ChallengesProvider } from '../contexts/ChallengesContext'
+import { DarkTheme } from '../components/DarkTheme'
+import { useState } from 'react'
 
 interface HomeProps {
   level: number;
   currentExperience: number;
-  challengesCompleted: number;
+  challengesCompleted: number;  
 }
 
+
 export default function Home(props:HomeProps) {
+  const [isDark, setIsDark] = useState(false)
+  const [isLight, setIsLight] = useState(true)
+
+  
+  function changeToDark() {
+    setIsDark(true)
+    setIsLight(false)
+  }
+
+  function changeToLight() {
+      setIsDark(false)
+      setIsLight(true)
+  }
+
   return (
     <ChallengesProvider 
       level={props.level} 
       currentExperience={props.currentExperience} 
-      challengesCompleted={props.challengesCompleted
-    }>
-      <div className={styles.container}>
-        <Head>
-          <title>Início | PomoChallenges</title>
-        </Head>
-        <ExperienceBar />
-        <CountdownProvider>
-        <section>
-          <div>
-            <Profile />
-            <CompletedChallenges />
-            <Countdown />
-          </div>
+      challengesCompleted={props.challengesCompleted}
+      >
+      <div className={ isDark ? `${styles.page} ${styles.darkTheme}` : `${styles.page}` }>
 
-          <div>
-            <ChallengeBox />
+        <div className={ isDark ? `${styles.container} ${styles.darkTheme}` : `${styles.container}` }
+        
+        >
+        
+          <Head>
+            <title>Início | PomoChallenges</title>
+          </Head>
+          <div className={styles.flexContent}>
+            <ExperienceBar />
+            <DarkTheme isDark={isDark} isLight={isLight} changeToLight={changeToLight}  changeToDark={changeToDark} />
           </div>
-        </section>
-        </CountdownProvider>
+          <CountdownProvider>
+          <section>
+            <div>
+              <div>
+              <Profile />            
+              </div>
+              <CompletedChallenges />
+              <Countdown />
+            </div>
+
+            <div>
+              <ChallengeBox />
+            </div>
+          </section>
+          </CountdownProvider>
+        </div>
       </div>
     </ChallengesProvider>
+    
   )
 }
 
