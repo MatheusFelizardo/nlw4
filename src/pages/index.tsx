@@ -26,7 +26,7 @@ export default function Home(props) {
     }>
       <div className={styles.container}>
         <Head>
-          <title>Início | MoveIT</title>
+          <title>Início | PomoChallenges</title>
         </Head>
         <ExperienceBar />
         <CountdownProvider>
