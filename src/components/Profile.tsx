@@ -5,14 +5,14 @@ import styles from '../styles/components/Profile.module.scss'
 
 export const Profile = () => {
     const { level } = useContext(ChallengesContext)
-    const { picture_url, username } = useContext(UserContext)
+    // const {picture_url,username  } = useContext(UserContext)
     return (
 
         <div className={styles.profileContainer} >
-            <img src={picture_url || ""} alt="{username}"/>
+            <img src="https://github.com/MatheusFelizardo.png" alt="Matheus Felizardo"/>
 
             <div>
-                <strong>{username || ""}</strong>
+                <strong>Matheus Felizardo</strong>
                 <p>
                     <img src="icons/level.svg" alt="Level"/>
                     {level}

@@ -29,7 +29,7 @@ export default function Home(props:HomeProps) {
   const [isDark, setIsDark] = useState(false)
   const [isLight, setIsLight] = useState(true)
   const [isUserLogged, setIsUserLogged] = useState(false)
-  const { user, error, isLoading } = useUser();
+  // const { user, error, isLoading } = useUser();
 
   function changeToDark() {
     setIsDark(true)
@@ -41,13 +41,13 @@ export default function Home(props:HomeProps) {
       setIsLight(true)
   }
   
-  if(isLoading) return <h2>Carregando</h2>
+  // if(isLoading) return <h2>Carregando</h2>
 
-  if(!user) {
-    return (
-      <LoginScreen />
-    )
-  }
+  // if(!user) {
+  //   return (
+  //     <LoginScreen />
+  //   )
+  // }
 
   function removeCookies() {
     Cookies.remove('level')
@@ -56,7 +56,7 @@ export default function Home(props:HomeProps) {
   }
 
   return (    
-    <UserProvider>
+    // <UserProvider>
       <ChallengesProvider 
         level={props.level} 
         currentExperience={props.currentExperience} 
@@ -71,13 +71,13 @@ export default function Home(props:HomeProps) {
             <div className={styles.flexContent}>
             <DarkTheme isDark={isDark} isLight={isLight} changeToLight={changeToLight}  changeToDark={changeToDark} />
 
-              <div className={styles.logout} >
+              {/* <div className={styles.logout} >
                 <a href="/api/auth/logout" onClick={removeCookies}>
                   <FontAwesomeIcon icon={faSignOutAlt}/>
                   <p>Logout</p>
                 </a>
                 
-              </div>
+              </div> */}
             </div>            
             <ExperienceBar />
             <CountdownProvider>
@@ -98,7 +98,7 @@ export default function Home(props:HomeProps) {
           </div>
         </div>
       </ChallengesProvider>
-    </UserProvider>
+    // </UserProvider>
   )
 }
 
