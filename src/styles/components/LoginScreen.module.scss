@@ -1,0 +1,39 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(89,101,224);
+    background: linear-gradient(90deg, rgba(89,101,224,1) 0%, rgba(68,83,247,1) 25%, rgba(81,96,247,1) 50%, rgba(86,101,251,1) 75%, rgba(91,106,255,1) 100%);   
+    display: flex;
+    justify-content: center;
+    .contentWrapper {
+        padding-top: 4rem;
+        color: var(--white);
+        max-width: 960px;
+        margin: 0 auto;
+        text-align: center;
+        img {
+            padding: 4rem 0 1rem;
+        }
+
+        .textWrapper {
+            .textContent {
+                margin-bottom: 1rem;
+            }
+
+            .loginCard {
+                padding-top: 3rem;
+                p {
+                    margin-bottom: 1.5rem;
+                }
+                a {
+                    padding: 0.5rem 7rem;
+                    border: 1px solid #FFF;
+                    &:hover {
+                        background:var(--blue-dark);
+                    }
+                }
+            }
+            
+        }
+    }
+}
