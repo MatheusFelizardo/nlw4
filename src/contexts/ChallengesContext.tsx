@@ -40,7 +40,7 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
     const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
 
     useEffect(()=> {
-        Notification.requestPermission();
+        Notification.requestPermission().then(function(permission) { console.log('Permission state:', permission)});
     }, [])
 
     useEffect(()=> {

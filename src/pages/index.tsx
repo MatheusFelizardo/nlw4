@@ -11,11 +11,11 @@ import { ChallengesProvider } from '../contexts/ChallengesContext'
 import { DarkTheme } from '../components/DarkTheme'
 import { useEffect, useState } from 'react'
 import { UserProvider } from '../contexts/UserContext'
-import { useUser } from '@auth0/nextjs-auth0'
 import { LoginScreen } from '../components/LoginScreen'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Cookies from 'js-cookie'
+import { signIn, signOut, useSession } from 'next-auth/client'
 
 
 interface HomeProps {
@@ -30,6 +30,7 @@ export default function Home(props:HomeProps) {
   const [isLight, setIsLight] = useState(true)
   const [isUserLogged, setIsUserLogged] = useState(false)
   // const { user, error, isLoading } = useUser();
+  const [ session, loading ] = useSession()
 
   function changeToDark() {
     setIsDark(true)
@@ -62,6 +63,17 @@ export default function Home(props:HomeProps) {
         currentExperience={props.currentExperience} 
         challengesCompleted={props.challengesCompleted}
         >     
+        {!session && <>
+              Not signed in <br/>
+              <button onClick={():Promise<void> => signIn('auth0')}>Sign in</button>
+            </>}
+            {session && <>
+              Signed in as {session.user.email} <br/>
+              <button onClick={():Promise<void> => signOut()}>Sign out</button>
+        </>}  
+
+        {loading && <div>Carregando...</div>}
+        
         <div className={ isDark ? `${styles.page} ${styles.darkTheme}` : `${styles.page}` }>          
           <div className={ isDark ? `${styles.container} ${styles.darkTheme}` : `${styles.container}` }>
             <Head>
