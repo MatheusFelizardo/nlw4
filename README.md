@@ -33,7 +33,7 @@ Site do app: https://pomochallenges.vercel.app/
 
 ## :gear: Melhorias Realizadas
 
-- Adicionado responsividade :iphone:
+- Adicionado responsividade :iphone: (necessário ajuste no funcionamento)
 - Adicionado darkmode 🌜
 
 ## :seedling: Requisitos Mínimos
