@@ -40,14 +40,6 @@ export default function Home(props:HomeProps) {
       setIsLight(true)
   }
   
-  if(loading) return <h2>Carregando</h2>
-
-  if(!session) {
-    return (
-      <LoginScreen />
-    )
-  }
-  
   function removeCookies() {
     Cookies.remove('level')
     Cookies.remove('currentExperience')
@@ -57,6 +49,12 @@ export default function Home(props:HomeProps) {
   function userLogout() {
     removeCookies()
     signOut({ callbackUrl: 'http://localhost:3000/' })
+  }
+
+  if(!session || loading ) {
+    return (
+      <LoginScreen />
+    )
   }
 
   return (    

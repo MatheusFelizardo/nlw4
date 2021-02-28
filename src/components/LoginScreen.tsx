@@ -12,14 +12,19 @@ export const LoginScreen = () => {
                 <div className={styles.logo}>
                     <img src="/logo.png" alt="PomoChallenge"/>
                 </div>
-                    <div className={styles.textContent}>
-                        <p>Aplicativo para controle de produtividade alinhado à exercícios que melhoram sua qualidade de vida.</p>
-                    </div>
 
-                    <div className={styles.loginCard}>
+                    <div className={styles.textContent}>
+                        {loading ? 
+                        <h2>Carregando...</h2>
+                        :
+                        <p>Aplicativo para controle de produtividade alinhado à exercícios que melhoram sua qualidade de vida.</p>
+                        }
+                    </div>
+                    {!loading && <div className={styles.loginCard}>
                         <p>É necessário estar logado para continuar.</p>
                         <a onClick={():Promise<void> => signIn('auth0')}>Fazer login</a>
-                    </div>
+                    </div> }
+                   
                 </div>
             </section>
         </div>
