@@ -28,8 +28,6 @@ interface HomeProps {
 export default function Home(props:HomeProps) {
   const [isDark, setIsDark] = useState(false)
   const [isLight, setIsLight] = useState(true)
-  const [isUserLogged, setIsUserLogged] = useState(false)
-  // const { user, error, isLoading } = useUser();
   const [ session, loading ] = useSession()
 
   function changeToDark() {
@@ -42,13 +40,13 @@ export default function Home(props:HomeProps) {
       setIsLight(true)
   }
   
-  // if(isLoading) return <h2>Carregando</h2>
+  if(loading) return <h2>Carregando</h2>
 
-  // if(!user) {
-  //   return (
-  //     <LoginScreen />
-  //   )
-  // }
+  if(!session) {
+    return (
+      <LoginScreen />
+    )
+  }
 
   function removeCookies() {
     Cookies.remove('level')
@@ -57,23 +55,12 @@ export default function Home(props:HomeProps) {
   }
 
   return (    
-    // <UserProvider>
+    <UserProvider>
       <ChallengesProvider 
         level={props.level} 
         currentExperience={props.currentExperience} 
         challengesCompleted={props.challengesCompleted}
-        >     
-
-        {!session && <>
-              Not signed in <br/>
-              <button onClick={():Promise<void> => signIn('auth0')}>Sign in</button>
-            </>}
-            {session && <>
-              Signed in as {session.user.email} <br/>
-              <button onClick={():Promise<void> => signOut()}>Sign out</button>
-        </>}  
-
-
+        >  
         <div className={ isDark ? `${styles.page} ${styles.darkTheme}` : `${styles.page}` }>          
           <div className={ isDark ? `${styles.container} ${styles.darkTheme}` : `${styles.container}` }>
             <Head>
@@ -83,13 +70,12 @@ export default function Home(props:HomeProps) {
             <div className={styles.flexContent}>
             <DarkTheme isDark={isDark} isLight={isLight} changeToLight={changeToLight}  changeToDark={changeToDark} />
 
-              {/* <div className={styles.logout} >
-                <a href="/api/auth/logout" onClick={removeCookies}>
+              <div className={styles.logout} >
+                <a onClick={():Promise<void> => signOut({ callbackUrl: 'http://localhost:3000/' })}>
                   <FontAwesomeIcon icon={faSignOutAlt}/>
                   <p>Logout</p>
                 </a>
-                
-              </div> */}
+              </div>
             </div>            
             <ExperienceBar />
             <CountdownProvider>
@@ -110,7 +96,7 @@ export default function Home(props:HomeProps) {
           </div>
         </div>
       </ChallengesProvider>
-    // </UserProvider>
+    </UserProvider>
   )
 }
 

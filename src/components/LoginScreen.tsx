@@ -6,9 +6,6 @@ export const LoginScreen = () => {
 
     return (
         <div className={styles.container}>
-
-            {loading && <div>Carregando...</div>}
-
             <section className={styles.contentWrapper}>
                 
                 <div className={styles.textWrapper}>  
