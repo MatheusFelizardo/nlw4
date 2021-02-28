@@ -63,6 +63,7 @@ export default function Home(props:HomeProps) {
         currentExperience={props.currentExperience} 
         challengesCompleted={props.challengesCompleted}
         >     
+
         {!session && <>
               Not signed in <br/>
               <button onClick={():Promise<void> => signIn('auth0')}>Sign in</button>
@@ -72,8 +73,7 @@ export default function Home(props:HomeProps) {
               <button onClick={():Promise<void> => signOut()}>Sign out</button>
         </>}  
 
-        {loading && <div>Carregando...</div>}
-        
+
         <div className={ isDark ? `${styles.page} ${styles.darkTheme}` : `${styles.page}` }>          
           <div className={ isDark ? `${styles.container} ${styles.darkTheme}` : `${styles.container}` }>
             <Head>

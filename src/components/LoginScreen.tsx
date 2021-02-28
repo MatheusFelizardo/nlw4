@@ -1,9 +1,14 @@
 import styles from '../styles/components/LoginScreen.module.scss'
+import { signIn, signOut, useSession } from 'next-auth/client'
 
 export const LoginScreen = () => {
+    const [ session, loading ] = useSession()
 
     return (
         <div className={styles.container}>
+
+            {loading && <div>Carregando...</div>}
+
             <section className={styles.contentWrapper}>
                 
                 <div className={styles.textWrapper}>  
@@ -16,7 +21,7 @@ export const LoginScreen = () => {
 
                     <div className={styles.loginCard}>
                         <p>É necessário estar logado para continuar.</p>
-                        <a href="/api/auth/login">Fazer login</a>
+                        <button onClick={():Promise<void> => signIn('auth0')}>Fazer login</button>
                     </div>
                 </div>
             </section>
