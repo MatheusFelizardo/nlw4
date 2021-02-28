@@ -42,9 +42,16 @@ Site do app: https://pomochallenges.vercel.app/
 - Navegador
 
 Para iniciar o projeto na máquina basta:
+- Fazer o clone do repositório
 - Usar o comando npm install (instalar as dependências)
+- Criar o arquivo .env.local, com as variáveis de ambiente | Será necessário cadastro na https://auth0.com/ e configurar uma nova aplicação (verificar documentação da auth0 e https://next-auth.js.org/) 
+NEXTAUTH_URL=http://localhost:3000
+AUTH0_CLIENT_ID= 
+AUTH0_CLIENT_SECRET= 
+AUTH0_DOMAIN= 
 - Rodar o comando npm run dev (inicia a aplicação)
 - Entrar pelo navegador na porta 3000 (localhost:3000)
+
 
 ## :rocket: Tecnologias Utilizadas 
 
