@@ -4,6 +4,9 @@
     font-family: Rajdhani;
     font-weight: 600;
     color: var(--title);
+    @media (min-width: 300px) and (max-width: 767px) {
+        padding: 0 1rem;
+    }
 }
 
 .countdownContainer > div {
@@ -51,7 +54,12 @@
     color: var(--white);
     font-weight: 600;
     transition: background 0.2s;
+    @media (min-width: 300px) and (max-width: 767px) {
+        width: 90%;
+        margin: 1rem auto 0;
+        height: 4rem;
 
+    }
     &.countdownButtonActive {
         background: var(--red);
         color: var(--white);

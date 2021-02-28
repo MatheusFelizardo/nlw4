@@ -6,6 +6,10 @@
     padding-bottom: 1rem;
     border-bottom: 1px solid #d7d8da;
     font-weight: 500;
+    @media (min-width: 300px) and (max-width: 767px) {
+        padding: 1rem;
+        margin: 0 0 1rem;
+    }
 
     span:first-child {
         font-size: 1.25rem;

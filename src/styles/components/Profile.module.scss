@@ -1,6 +1,9 @@
 .profileContainer {
     display: flex;
     align-items: center;
+    @media (min-width: 300px) and (max-width: 767px) {
+        padding: 0 1rem;
+    }
     &> img {
         width: 5.5rem;
         height: 5.5rem;
