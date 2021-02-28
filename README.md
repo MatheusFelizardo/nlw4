@@ -47,4 +47,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - Typescript
 - Sass com module
 
-Para iniciar o projeto na máquina basta dar um -npm install.
+Para iniciar o projeto na máquina basta:
+- Usar o comando npm install (instalar as dependências)
+- Rodar o comando npm run dev (inicia a aplicação)
+- Entrar pelo navegador na porta 3000 (localhost:3000)
