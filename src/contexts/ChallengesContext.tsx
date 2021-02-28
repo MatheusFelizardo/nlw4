@@ -63,15 +63,15 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
         const randomChallengeIndex = Math.floor(Math.random() * challenges.length)
         const challenge = challenges[randomChallengeIndex]
 
-        new Audio('/notification.mp3').play()
 
         if (Notification.permission === "granted") {
 
             if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) )
-            {  
+            {    new Audio('/notification.mp3').play()
                 alert(`Novo desafio valendo ${challenge.amount}xp 🏆`)
             }
             else {
+                new Audio('/notification.mp3').play()
                 new Notification('🎉 Novo desafio  🎉', {
                     body: `Valendo ${challenge.amount}xp 🏆`
                 })
