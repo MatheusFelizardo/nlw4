@@ -71,7 +71,7 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
             {   
                 setTimeout(()=> {
                     alert(`Novo desafio valendo ${challenge.amount}xp 🏆`)
-                }, 100)
+                }, 1000)
                 
             }
             else {
