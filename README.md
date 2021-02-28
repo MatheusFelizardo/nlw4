@@ -13,7 +13,7 @@ ___
 
 ___
 
-<img src="https://i.ibb.co/BT6MGnz/pomochallenge.gif" width="800">
+<img src="https://i.ibb.co/BT6MGnz/pomochallenge.gif" width="1200">
 
 ## :information_source: Sobre
 
