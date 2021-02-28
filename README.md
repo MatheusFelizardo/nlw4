@@ -13,7 +13,7 @@ ___
 
 ___
 
-<img src="https://i.ibb.co/4MXPYTL/pomochallenge.gif" width="1200">
+<img src="https://i.ibb.co/BT6MGnz/pomochallenge.gif" width="800">
 
 ## :information_source: Sobre
 
@@ -24,8 +24,8 @@ Site do app: https://pomochallenges.vercel.app/
 
 ## :fire: Próximas Atualizações
 
-- Adicionar login e ajuste no nome de usuário e foto de forma dinâmica
-- Tela inicial de login, com login obrigatório para entrar na aplicação
+- <s>Adicionar login e ajuste no nome de usuário e foto de forma dinâmica </s> | Atualizado: 28/02
+- <s>Tela inicial de login, com login obrigatório para entrar na aplicação  </s> | Atualizado: 28/02
 - Transformar em PWA
 - Adicionar opção para registrar qual atividade está sendo feita (Estudo, trabalho, Jogo)
 - Geração de relatório com o tempo total em cada atividade
