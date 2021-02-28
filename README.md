@@ -27,6 +27,7 @@ Projeto criado na NLW4 da Rocketseat.
 - Transformar em PWA
 - Adicionar opção para registrar qual atividade está sendo feita (Estudo, trabalho, Jogo)
 - Geração de relatório com o tempo total em cada atividade
+- Darkmode na tela de levelup
 
 ## :gear: Melhorias Realizadas
 
