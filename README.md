@@ -24,8 +24,8 @@ Site do app: https://pomochallenges.vercel.app/
 
 ## :fire: Próximas Atualizações
 
-- <s>Adicionar login e ajuste no nome de usuário e foto de forma dinâmica </s> | Atualizado: 28/02
-- <s>Tela inicial de login, com login obrigatório para entrar na aplicação  </s> | Atualizado: 28/02
+- <s>Adicionar login e ajuste no nome de usuário e foto de forma dinâmica </s>  | Atualizado: 28/02
+- <s>Tela inicial de login, com login obrigatório para entrar na aplicação  </s>  | Atualizado: 28/02
 - Transformar em PWA
 - Adicionar opção para registrar qual atividade está sendo feita (Estudo, trabalho, Jogo)
 - Geração de relatório com o tempo total em cada atividade
