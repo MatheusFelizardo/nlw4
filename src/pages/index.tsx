@@ -24,7 +24,6 @@ interface HomeProps {
   challengesCompleted: number;  
 }
 
-
 export default function Home(props:HomeProps) {
   const [isDark, setIsDark] = useState(false)
   const [isLight, setIsLight] = useState(true)

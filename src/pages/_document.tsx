@@ -7,6 +7,10 @@ export default class MyDocument extends Document {
         return (
             <Html lang="pt-BR">  
                 <Head>
+                    <link rel="manifest" href="/manifest.json"/>
+                    <link rel="apple-touch-icon" href="/icon-192x192.png"/>
+                    <meta name="theme-color" content="#5965E0"/>
+                    
                     <script src="https://kit.fontawesome.com/407ada2811.js"></script>
                     <link rel="shortcut icon" href="favicon.png" type="image/png"/>
                     <link rel="preconnect" href="https://fonts.gstatic.com" />
