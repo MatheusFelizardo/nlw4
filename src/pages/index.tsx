@@ -47,11 +47,16 @@ export default function Home(props:HomeProps) {
       <LoginScreen />
     )
   }
-
+  
   function removeCookies() {
     Cookies.remove('level')
     Cookies.remove('currentExperience')
     Cookies.remove('challengesCompleted')
+  }
+
+  function userLogout() {
+    removeCookies()
+    signOut({ callbackUrl: 'http://localhost:3000/' })
   }
 
   return (    
@@ -71,7 +76,7 @@ export default function Home(props:HomeProps) {
             <DarkTheme isDark={isDark} isLight={isLight} changeToLight={changeToLight}  changeToDark={changeToDark} />
 
               <div className={styles.logout} >
-                <a onClick={():Promise<void> => signOut({ callbackUrl: 'http://localhost:3000/' })}>
+                <a onClick={userLogout}>
                   <FontAwesomeIcon icon={faSignOutAlt}/>
                   <p>Logout</p>
                 </a>

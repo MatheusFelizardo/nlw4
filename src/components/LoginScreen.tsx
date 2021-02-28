@@ -18,7 +18,7 @@ export const LoginScreen = () => {
 
                     <div className={styles.loginCard}>
                         <p>É necessário estar logado para continuar.</p>
-                        <button onClick={():Promise<void> => signIn('auth0')}>Fazer login</button>
+                        <a onClick={():Promise<void> => signIn('auth0')}>Fazer login</a>
                     </div>
                 </div>
             </section>
