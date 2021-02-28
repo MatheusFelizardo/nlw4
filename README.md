@@ -17,8 +17,10 @@ ___
 
 ## :information_source: Sobre
 
-Aplicativo para controle de produtividade alinhado à exercícios que melhoram sua qualidade de vida.
-Projeto criado na NLW4 da Rocketseat.
+Aplicativo para controle de produtividade alinhado à exercícios que melhoram sua qualidade de vida. </br>
+Projeto criado na NLW4 da Rocketseat. </br>
+
+Site do app: https://pomochallenges.vercel.app/
 
 ## :fire: Próximas Atualizações
 
@@ -39,6 +41,11 @@ Projeto criado na NLW4 da Rocketseat.
 - NodeJs
 - Navegador
 
+Para iniciar o projeto na máquina basta:
+- Usar o comando npm install (instalar as dependências)
+- Rodar o comando npm run dev (inicia a aplicação)
+- Entrar pelo navegador na porta 3000 (localhost:3000)
+
 ## :rocket: Tecnologias Utilizadas 
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias
@@ -48,7 +55,4 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - Typescript
 - Sass com module
 
-Para iniciar o projeto na máquina basta:
-- Usar o comando npm install (instalar as dependências)
-- Rodar o comando npm run dev (inicia a aplicação)
-- Entrar pelo navegador na porta 3000 (localhost:3000)
+
