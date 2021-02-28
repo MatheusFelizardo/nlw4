@@ -37,20 +37,10 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
     const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0)
     const [activeChallenge, setActiveChallenge] = useState(null)
     const [isLevelModalOpen, setIsLevelUpModalOpen] = useState(false)
-    const experienceToNextLevel = Math.pow((level + 1) * 4, 2) 
-    
+    const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
+
     useEffect(()=> {
-
-        if(navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) )
-        {  
-            alert("É mobile")
-        }
-        else {
-            alert("É desktop")
-            Notification.requestPermission().then(function(permission) { console.log('Permission state:', permission)});
-        }
-
-        
+        Notification.requestPermission().then(function(permission) { console.log('Permission state:', permission)});
     }, [])
 
     useEffect(()=> {
@@ -76,9 +66,10 @@ export function ChallengesProvider ({children, ...rest}:ChallengesProviderProps)
         new Audio('/notification.mp3').play()
 
         if (Notification.permission === "granted") {
-            new Notification('🎉 Novo desafio  🎉', {
-                body: `Valendo ${challenge.amount}xp 🏆`
-            })
+            // new Notification('🎉 Novo desafio  🎉', {
+            //     body: `Valendo ${challenge.amount}xp 🏆`
+            // })
+            alert("O problema não é na notificação")
         }
         setActiveChallenge(challenge)
     }
