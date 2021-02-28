@@ -13,7 +13,7 @@ ___
 
 ___
 
-<img src="https://i.ibb.co/4MXPYTL/pomochallenge.gif" width="1200">
+<img src="https://i.ibb.co/BT6MGnz/pomochallenge.gif" width="1200">
 
 ## :information_source: Sobre
 
@@ -24,8 +24,8 @@ Site do app: https://pomochallenges.vercel.app/
 
 ## :fire: Próximas Atualizações
 
-- Adicionar login e ajuste no nome de usuário e foto de forma dinâmica
-- Tela inicial de login, com login obrigatório para entrar na aplicação
+- <s>Adicionar login e ajuste no nome de usuário e foto de forma dinâmica </s>  | Atualizado: 28/02
+- <s>Tela inicial de login, com login obrigatório para entrar na aplicação  </s>  | Atualizado: 28/02
 - Transformar em PWA
 - Adicionar opção para registrar qual atividade está sendo feita (Estudo, trabalho, Jogo)
 - Geração de relatório com o tempo total em cada atividade
@@ -33,7 +33,7 @@ Site do app: https://pomochallenges.vercel.app/
 
 ## :gear: Melhorias Realizadas
 
-- Adicionado responsividade :iphone:
+- Adicionado responsividade :iphone: (necessário ajuste no funcionamento)
 - Adicionado darkmode 🌜
 
 ## :seedling: Requisitos Mínimos
@@ -42,9 +42,16 @@ Site do app: https://pomochallenges.vercel.app/
 - Navegador
 
 Para iniciar o projeto na máquina basta:
+- Fazer o clone do repositório
 - Usar o comando npm install (instalar as dependências)
+- Criar o arquivo .env.local, com as variáveis de ambiente | Será necessário cadastro na https://auth0.com/ e configurar uma nova aplicação (verificar documentação da auth0 e https://next-auth.js.org/) </br>
+NEXTAUTH_URL=http://localhost:3000 </br>
+AUTH0_CLIENT_ID=  </br>
+AUTH0_CLIENT_SECRET=  </br>
+AUTH0_DOMAIN= </br>
 - Rodar o comando npm run dev (inicia a aplicação)
 - Entrar pelo navegador na porta 3000 (localhost:3000)
+
 
 ## :rocket: Tecnologias Utilizadas 
 
