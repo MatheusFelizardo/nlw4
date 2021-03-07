@@ -26,10 +26,11 @@ Site do app: https://pomochallenges.vercel.app/
 
 - <s>Adicionar login e ajuste no nome de usuário e foto de forma dinâmica </s>  | Atualizado: 28/02
 - <s>Tela inicial de login, com login obrigatório para entrar na aplicação  </s>  | Atualizado: 28/02
-- Transformar em PWA
+- <s>Transformar em PWA </s> | Atualizado: 28/02 (Não funcional no Safari, requer análise)
 - Adicionar opção para registrar qual atividade está sendo feita (Estudo, trabalho, Jogo)
 - Geração de relatório com o tempo total em cada atividade
 - Darkmode na tela de levelup
+- Corrigir problemas PWA no IOS
 
 ## :gear: Melhorias Realizadas
 
