@@ -23,7 +23,7 @@ Projeto criado na NLW4 da Rocketseat. </br>
 Site do app: https://pomochallenges.vercel.app/
 
 ## :fire: Próximas Atualizações
-
+</br> (Atualizações paralisadas indeterminadamente - 13/03)
 - <s>Adicionar login e ajuste no nome de usuário e foto de forma dinâmica </s>  | Atualizado: 28/02
 - <s>Tela inicial de login, com login obrigatório para entrar na aplicação  </s>  | Atualizado: 28/02
 - <s>Transformar em PWA </s> | Atualizado: 28/02 (Não funcional no Safari, requer análise)
